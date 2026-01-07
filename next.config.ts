@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",  // <--- Crucial: Turns your app into static HTML files
+  images: {
+    unoptimized: true, // <--- Crucial: Required because there is no server to process images
+  },
 };
 
 export default nextConfig;
