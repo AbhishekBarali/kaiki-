@@ -1,0 +1,59 @@
+<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <!-- Cherry Blossom Branch Pattern - Top Left Corner -->
+  <g opacity="0.15">
+    <!-- Main branch -->
+    <path d="M-10 0 Q30 50 20 100 Q10 150 40 200 Q60 250 50 300" stroke="currentColor" stroke-width="2" fill="none"/>
+    
+    <!-- Secondary branches -->
+    <path d="M20 100 Q50 90 70 110" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M30 160 Q60 150 85 165" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M15 60 Q-10 45 -30 60" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    
+    <!-- Cherry blossoms (5-petal flowers) -->
+    <!-- Flower 1 -->
+    <g transform="translate(70, 105)">
+      <circle cx="0" cy="-8" r="6" opacity="0.8"/>
+      <circle cx="7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="0" cy="0" r="3"/>
+    </g>
+    
+    <!-- Flower 2 -->
+    <g transform="translate(85, 160) scale(0.8)">
+      <circle cx="0" cy="-8" r="6" opacity="0.8"/>
+      <circle cx="7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="0" cy="0" r="3"/>
+    </g>
+    
+    <!-- Flower 3 -->
+    <g transform="translate(-20, 55) scale(0.7)">
+      <circle cx="0" cy="-8" r="6" opacity="0.8"/>
+      <circle cx="7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="0" cy="0" r="3"/>
+    </g>
+    
+    <!-- Flower 4 -->
+    <g transform="translate(40, 200) scale(0.9)">
+      <circle cx="0" cy="-8" r="6" opacity="0.8"/>
+      <circle cx="7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-4.7" cy="6.5" r="6" opacity="0.8"/>
+      <circle cx="-7.6" cy="-2.5" r="6" opacity="0.8"/>
+      <circle cx="0" cy="0" r="3"/>
+    </g>
+    
+    <!-- Small buds -->
+    <circle cx="25" cy="130" r="4" opacity="0.6"/>
+    <circle cx="5" cy="180" r="3" opacity="0.5"/>
+    <circle cx="55" cy="230" r="4" opacity="0.6"/>
+    <circle cx="0" cy="30" r="3" opacity="0.5"/>
+  </g>
+</svg>

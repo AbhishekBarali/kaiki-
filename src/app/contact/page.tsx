@@ -50,7 +50,7 @@ export default function ContactPage() {
                     {/* Left Column - Info */}
                     <div>
                         <FadeIn>
-                            <span className="text-[10px] font-mono text-[#CF2E2E] uppercase tracking-[0.3em] block mb-8">
+                            <span className="text-[10px] font-mono text-[#B84C4C] uppercase tracking-[0.3em] block mb-8">
                                 Contact
                             </span>
                             <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-8">
@@ -70,7 +70,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Email</h3>
-                                        <a href="mailto:hello@kaiki.dev" className="text-white hover:text-[#CF2E2E] transition-colors">
+                                        <a href="mailto:hello@kaiki.dev" className="text-white hover:text-[#B84C4C] transition-colors">
                                             hello@kaiki.dev
                                         </a>
                                     </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                             <div className="w-32 h-32 border border-white/5 relative">
                                 <div className="absolute inset-4 border border-white/10" />
                                 <div className="absolute inset-8 border border-white/15" />
-                                <div className="absolute inset-12 bg-[#CF2E2E]/10" />
+                                <div className="absolute inset-12 bg-[#B84C4C]/10" />
                             </div>
                         </FadeIn>
                     </div>
@@ -126,9 +126,9 @@ export default function ContactPage() {
                                                 initial={{ scale: 0 }}
                                                 animate={{ scale: 1 }}
                                                 transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-                                                className="w-16 h-16 border border-[#CF2E2E] rounded-full flex items-center justify-center mx-auto mb-6"
+                                                className="w-16 h-16 border border-[#B84C4C] rounded-full flex items-center justify-center mx-auto mb-6"
                                             >
-                                                <Check className="text-[#CF2E2E]" size={24} />
+                                                <Check className="text-[#B84C4C]" size={24} />
                                             </motion.div>
                                             <h3 className="text-xl text-white font-light mb-2">Message Sent</h3>
                                             <p className="text-white/50 text-sm">We&apos;ll be in touch soon.</p>
@@ -148,13 +148,13 @@ export default function ContactPage() {
                                                     type="text"
                                                     id="name"
                                                     placeholder=" "
-                                                    className={`peer w-full bg-transparent border-b py-3 text-white placeholder-transparent focus:ring-0 transition-colors font-light text-sm outline-none ${errors.name ? 'border-red-500' : 'border-white/20 focus:border-[#CF2E2E]'
+                                                    className={`peer w-full bg-transparent border-b py-3 text-white placeholder-transparent focus:ring-0 transition-colors font-light text-sm outline-none ${errors.name ? 'border-red-500' : 'border-white/20 focus:border-[#B84C4C]'
                                                         }`}
                                                     {...register('name', { required: 'Name is required' })}
                                                 />
                                                 <label
                                                     htmlFor="name"
-                                                    className="absolute left-0 -top-3.5 text-xs text-white/40 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#CF2E2E] peer-focus:text-xs"
+                                                    className="absolute left-0 -top-3.5 text-xs text-white/40 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#B84C4C] peer-focus:text-xs"
                                                 >
                                                     Name
                                                 </label>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                                                     type="email"
                                                     id="email"
                                                     placeholder=" "
-                                                    className={`peer w-full bg-transparent border-b py-3 text-white placeholder-transparent focus:ring-0 transition-colors font-light text-sm outline-none ${errors.email ? 'border-red-500' : 'border-white/20 focus:border-[#CF2E2E]'
+                                                    className={`peer w-full bg-transparent border-b py-3 text-white placeholder-transparent focus:ring-0 transition-colors font-light text-sm outline-none ${errors.email ? 'border-red-500' : 'border-white/20 focus:border-[#B84C4C]'
                                                         }`}
                                                     {...register('email', {
                                                         required: 'Email is required',
@@ -187,7 +187,7 @@ export default function ContactPage() {
                                                 />
                                                 <label
                                                     htmlFor="email"
-                                                    className="absolute left-0 -top-3.5 text-xs text-white/40 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#CF2E2E] peer-focus:text-xs"
+                                                    className="absolute left-0 -top-3.5 text-xs text-white/40 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#B84C4C] peer-focus:text-xs"
                                                 >
                                                     Email
                                                 </label>
@@ -208,13 +208,13 @@ export default function ContactPage() {
                                                     id="message"
                                                     rows={4}
                                                     placeholder=" "
-                                                    className={`peer w-full bg-transparent border-b py-3 text-white placeholder-transparent focus:ring-0 transition-colors font-light text-sm outline-none resize-none ${errors.message ? 'border-red-500' : 'border-white/20 focus:border-[#CF2E2E]'
+                                                    className={`peer w-full bg-transparent border-b py-3 text-white placeholder-transparent focus:ring-0 transition-colors font-light text-sm outline-none resize-none ${errors.message ? 'border-red-500' : 'border-white/20 focus:border-[#B84C4C]'
                                                         }`}
                                                     {...register('message', { required: 'Message is required' })}
                                                 />
                                                 <label
                                                     htmlFor="message"
-                                                    className="absolute left-0 -top-3.5 text-xs text-white/40 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#CF2E2E] peer-focus:text-xs"
+                                                    className="absolute left-0 -top-3.5 text-xs text-white/40 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#B84C4C] peer-focus:text-xs"
                                                 >
                                                     Message
                                                 </label>
@@ -266,7 +266,7 @@ export default function ContactPage() {
                             href="https://twitter.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white text-[10px] uppercase tracking-widest hover:text-[#CF2E2E] transition-colors"
+                            className="text-white text-[10px] uppercase tracking-widest hover:text-[#B84C4C] transition-colors"
                         >
                             DM us on Twitter / X →
                         </a>

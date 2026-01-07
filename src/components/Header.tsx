@@ -26,7 +26,7 @@ export default function Header() {
                 <div className="w-full h-24 flex items-center justify-between px-6 md:px-12 max-w-[1920px] mx-auto">
                     {/* Logo */}
                     <Link href="/" className="group flex items-center gap-3 pl-0 md:pl-8">
-                        <div className="w-2 h-2 bg-[#CF2E2E] rounded-full shadow-[0_0_10px_rgba(207,46,46,0.5)]" />
+                        <div className="w-2 h-2 bg-[#B84C4C] rounded-full shadow-[0_0_10px_rgba(207,46,46,0.5)]" />
                         <span className="text-white text-base md:text-lg font-light tracking-[0.6em] uppercase font-[family-name:var(--font-display)]">
                             KAIKI
                         </span>
@@ -44,7 +44,7 @@ export default function Header() {
                                 <span className="text-[10px] uppercase tracking-[0.2em] text-white/60 group-hover:text-white transition-colors duration-300">
                                     {link.label}
                                 </span>
-                                <span className="absolute bottom-0 right-0 w-0 h-[1px] bg-[#CF2E2E] transition-all duration-500 group-hover:w-full" />
+                                <span className="absolute bottom-0 right-0 w-0 h-[1px] bg-[#B84C4C] transition-all duration-500 group-hover:w-full" />
                             </Link>
                         ))}
                         <Link

@@ -28,7 +28,7 @@ export default function NotFound() {
                 transition={{ duration: 0.8 }}
                 className="relative z-10 text-center"
             >
-                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-[#CF2E2E] to-transparent mx-auto mb-8" />
+                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-[#B84C4C] to-transparent mx-auto mb-8" />
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}

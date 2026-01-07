@@ -1,0 +1,42 @@
+<svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Japanese Paint Brush Stroke - Horizontal -->
+  <defs>
+    <filter id="roughEdge" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  
+  <g filter="url(#roughEdge)">
+    <!-- Main brush stroke with organic feel -->
+    <path 
+      d="M5 20 
+         Q15 8, 40 15 
+         Q70 22, 100 18 
+         Q130 14, 160 20 
+         Q180 24, 195 18"
+      stroke="#CF2E2E" 
+      stroke-width="12" 
+      stroke-linecap="round"
+      fill="none"
+      opacity="0.9"
+    />
+    
+    <!-- Secondary stroke for texture -->
+    <path 
+      d="M10 22 
+         Q30 28, 60 20 
+         Q90 12, 120 22 
+         Q150 30, 180 22"
+      stroke="#CF2E2E" 
+      stroke-width="4" 
+      stroke-linecap="round"
+      fill="none"
+      opacity="0.5"
+    />
+    
+    <!-- Paint splatter dots -->
+    <circle cx="190" cy="25" r="2" fill="#CF2E2E" opacity="0.7"/>
+    <circle cx="8" cy="28" r="1.5" fill="#CF2E2E" opacity="0.6"/>
+  </g>
+</svg>

@@ -157,3 +157,89 @@ export function PageTransition({ children, className = '' }: PageTransitionProps
         </motion.div>
     );
 }
+
+interface TextRevealProps {
+    children: string;
+    className?: string;
+    delay?: number;
+    duration?: number;
+}
+
+/**
+ * Text reveal animation with clip-path mask effect
+ */
+export function TextReveal({
+    children,
+    className = '',
+    delay = 0,
+    duration = 0.8,
+}: TextRevealProps) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+    return (
+        <motion.span
+            ref={ref}
+            className={`inline-block overflow-hidden ${className}`}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        >
+            <motion.span
+                className="inline-block"
+                initial={{ y: '100%' }}
+                animate={isInView ? { y: 0 } : { y: '100%' }}
+                transition={{
+                    duration,
+                    delay,
+                    ease: [0.22, 1, 0.36, 1],
+                }}
+            >
+                {children}
+            </motion.span>
+        </motion.span>
+    );
+}
+
+interface GlitchTextProps {
+    children: string;
+    className?: string;
+}
+
+/**
+ * Subtle glitch effect on hover for tech feel
+ */
+export function GlitchText({ children, className = '' }: GlitchTextProps) {
+    return (
+        <motion.span
+            className={`relative inline-block ${className}`}
+            whileHover="hover"
+        >
+            <motion.span
+                className="absolute inset-0 text-[#B84C4C] opacity-0"
+                variants={{
+                    hover: {
+                        opacity: [0, 0.5, 0],
+                        x: [-2, 2, 0],
+                        transition: { duration: 0.3 }
+                    }
+                }}
+            >
+                {children}
+            </motion.span>
+            <motion.span
+                className="absolute inset-0 text-cyan-400 opacity-0"
+                variants={{
+                    hover: {
+                        opacity: [0, 0.5, 0],
+                        x: [2, -2, 0],
+                        transition: { duration: 0.3, delay: 0.05 }
+                    }
+                }}
+            >
+                {children}
+            </motion.span>
+            <span className="relative">{children}</span>
+        </motion.span>
+    );
+}
+

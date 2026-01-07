@@ -1,44 +1,54 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 const missionItems = [
     {
-        icon: '○',
-        title: 'Minimal Intervention',
-        description: 'Our algorithms optimize for "Minimum Effective Dose." We design for the least amount of screen time required to achieve maximum cognitive expansion.',
+        number: '01',
+        title: 'Simplicity',
+        description: 'We believe the best software is invisible. Clean interfaces, intuitive experiences, and systems that just work. No bloat, no unnecessary complexity.',
     },
     {
-        icon: '∞',
-        title: 'Sovereign Data',
-        description: 'Your neural data stays on the edge. We utilize local-first processing to ensure your psychological profile never leaves your personal device.',
+        number: '02',
+        title: 'Craftsmanship',
+        description: 'Every line of code is written with intention. We approach software development as a craft, not a commodity. Quality and reliability, always.',
     },
     {
-        icon: '◉',
-        title: 'Fluid Interface',
-        description: 'Interfaces that behave like water. Adaptive, formless, and responsive to your emotional state, disappearing when no longer needed.',
+        number: '03',
+        title: 'Efficiency',
+        description: 'Automate the mundane, amplify the meaningful. We build tools that eliminate repetitive tasks and free up your time for what truly matters.',
     },
+];
+
+const values = [
+    { title: 'Automation First', desc: 'We eliminate boring, repetitive work through intelligent systems.' },
+    { title: 'User-Centric Design', desc: 'Technology should adapt to humans, not the other way around.' },
+    { title: 'Transparent Process', desc: 'Clear communication, honest timelines, no surprises.' },
+    { title: 'Continuous Innovation', desc: 'We stay ahead of the curve so our clients don\'t have to.' },
 ];
 
 export default function AboutPage() {
     return (
         <div className="relative pt-32">
             {/* Hero Section */}
-            <section className="w-full min-h-[90vh] flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden">
+            <section className="w-full min-h-[80vh] flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                    <span className="font-[family-name:var(--font-display)] text-[25vw] text-white/[0.02] select-none leading-none tracking-widest font-bold">
+                    <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.02 }}
+                        transition={{ duration: 2 }}
+                        className="font-[family-name:var(--font-display)] text-[20vw] text-white select-none leading-none tracking-[0.2em]"
+                    >
                         KAIKI
-                    </span>
+                    </motion.span>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                    <div className="w-[60vh] h-[60vh] border border-white/[0.03] rounded-full" />
-                    <div className="w-[40vh] h-[40vh] border border-white/[0.05] rounded-full absolute" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-[100vh] bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-[60vh] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
                 </div>
 
                 {/* Content */}
@@ -47,46 +57,37 @@ export default function AboutPage() {
                         <div className="flex flex-col items-center gap-4 mb-8">
                             <div className="w-[1px] h-12 bg-white/30" />
                             <span className="font-[family-name:var(--font-display)] text-[10px] tracking-[0.4em] text-white/50 uppercase">
-                                The Architecture of Self
+                                About KAIKI
                             </span>
                         </div>
                     </FadeIn>
 
                     <FadeIn delay={0.1}>
-                        <h1 className="font-[family-name:var(--font-display)] font-light text-5xl md:text-7xl lg:text-9xl leading-none tracking-tight text-white text-glow mb-10">
-                            STILLNESS
+                        <h1 className="font-[family-name:var(--font-display)] font-light text-4xl md:text-6xl lg:text-8xl leading-none tracking-tight text-white text-glow mb-10">
+                            Software as Craft
                         </h1>
                     </FadeIn>
 
                     <FadeIn delay={0.2}>
-                        <p className="text-white/50 font-light text-sm md:text-base max-w-lg leading-loose tracking-wide">
-                            In an era of digital noise, KAIKI builds intelligent systems designed to retreat. We engineer AI that restores your cognitive sovereignty.
+                        <p className="text-white/70 font-normal text-sm md:text-base max-w-lg leading-loose tracking-wide">
+                            KAIKI is an AI-focused software development studio. We build intelligent applications,
+                            automation tools, and digital experiences that help businesses and individuals do more with less.
                         </p>
                     </FadeIn>
 
                     <FadeIn delay={0.3}>
-                        <div className="mt-16">
-                            <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                                className="w-3 h-3 border border-white/30"
-                                style={{ transform: 'rotate(45deg)' }}
-                            />
+                        <div className="mt-12 flex items-center gap-4">
+                            <div className="h-[1px] w-12 bg-[#B84C4C]" />
+                            <span className="text-xs font-mono text-white/50">Est. 2024</span>
+                            <div className="h-[1px] w-12 bg-[#B84C4C]" />
                         </div>
                     </FadeIn>
                 </div>
 
-                {/* Vertical Text */}
-                <div className="absolute right-8 md:right-16 top-1/2 -translate-y-1/2 hidden lg:block">
-                    <FadeIn delay={0.7}>
-                        <p className="writing-vertical font-[family-name:var(--font-display)] text-[10px] tracking-[0.3em] text-white/20 uppercase">
-                            Tokyo / San Francisco
-                        </p>
-                    </FadeIn>
-                </div>
+
             </section>
 
-            {/* Philosophy Quote Section */}
+            {/* Mission Quote Section */}
             <section className="w-full py-24 md:py-40 px-6 md:px-12 border-t border-white/5 relative">
                 <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative">
                     <div className="absolute left-[33.33%] top-0 bottom-0 w-[1px] bg-white/5 hidden md:block" />
@@ -96,19 +97,22 @@ export default function AboutPage() {
                         <FadeIn>
                             <div>
                                 <span className="text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/40 block mb-6">
-                                    01 — Philosophy
+                                    01 — Our Belief
                                 </span>
                                 <h2 className="text-3xl font-[family-name:var(--font-display)] font-light text-white mb-2">
-                                    Ma — The Art of Space
+                                    The Way of Software
                                 </h2>
                             </div>
                         </FadeIn>
 
                         <FadeIn delay={0.2} className="hidden md:block mt-24">
-                            <div className="w-full aspect-square border border-white/10 flex items-center justify-center relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-700" />
-                                <div className="w-[1px] h-full bg-white/10 group-hover:h-1/2 transition-all duration-700" />
-                                <div className="h-[1px] w-full bg-white/10 absolute group-hover:w-1/2 transition-all duration-700" />
+                            <div className="w-full aspect-square border border-white/10 relative overflow-hidden group bg-[#0a0a0a]">
+                                <Image
+                                    src="/images/bw-flower.png"
+                                    alt="Aesthetic flower"
+                                    fill
+                                    className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                                />
                             </div>
                         </FadeIn>
                     </div>
@@ -116,41 +120,42 @@ export default function AboutPage() {
                     {/* Right Column */}
                     <div className="md:col-span-8 md:pl-16 flex flex-col justify-center">
                         <FadeIn delay={0.3}>
-                            <blockquote className="text-2xl md:text-4xl leading-relaxed text-white/90 font-light italic">
-                                &ldquo;Technology should not demand your attention, it should reward your intention. We create tools that act as a mirror, reflecting your own clarity back to you.&rdquo;
+                            <blockquote className="text-2xl md:text-3xl leading-relaxed text-white font-normal">
+                                &ldquo;We believe technology should amplify human potential, not replace it.
+                                Our mission is to build intelligent tools that feel like natural extensions
+                                of human thought—powerful yet intuitive, complex yet elegant.&rdquo;
                             </blockquote>
                         </FadeIn>
 
                         <FadeIn delay={0.4}>
                             <div className="mt-12 flex items-center gap-4">
-                                <div className="h-[1px] w-12 bg-[#CF2E2E]" />
+                                <div className="h-[1px] w-12 bg-[#B84C4C]" />
                                 <span className="text-xs font-[family-name:var(--font-display)] tracking-widest uppercase text-white">
-                                    Abhishek Barali
+                                    KAIKI Studio
                                 </span>
-                                <span className="text-xs text-white/50 font-light">— Lead Architect</span>
                             </div>
                         </FadeIn>
                     </div>
                 </div>
             </section>
 
-            {/* Mission Section */}
+            {/* Philosophy Section */}
             <section className="w-full py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0a]/30 border-t border-white/5">
                 <div className="max-w-[1400px] mx-auto">
                     <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
                         <FadeIn>
                             <div>
                                 <span className="text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/40 block mb-4">
-                                    02 — Mission
+                                    02 — Philosophy
                                 </span>
                                 <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-display)] font-light text-white tracking-tight">
-                                    Essentialism via AI
+                                    Our Principles
                                 </h2>
                             </div>
                         </FadeIn>
                         <FadeIn delay={0.1}>
-                            <p className="text-white/50 font-light text-sm max-w-sm text-right leading-relaxed">
-                                Stripping away the superfluous to reveal the essential architecture of human potential.
+                            <p className="text-white/70 font-normal text-sm max-w-sm text-right leading-relaxed">
+                                Inspired by craftsmanship. Built with modern tools.
                             </p>
                         </FadeIn>
                     </div>
@@ -159,14 +164,16 @@ export default function AboutPage() {
                         {missionItems.map((item) => (
                             <StaggerItem key={item.title}>
                                 <div className="bg-[#050505] p-12 hover:bg-[#080808] transition-colors duration-700 group relative overflow-hidden h-[400px] flex flex-col justify-between">
-                                    <span className="text-white/50 text-3xl font-light group-hover:text-white transition-colors duration-500">
-                                        {item.icon}
-                                    </span>
+                                    <div className="flex items-start justify-between">
+                                        <span className="text-3xl font-[family-name:var(--font-display)] text-white/10 group-hover:text-[#B84C4C]/30 transition-colors duration-500">
+                                            {item.number}
+                                        </span>
+                                    </div>
                                     <div>
                                         <h3 className="text-lg font-[family-name:var(--font-display)] text-white mb-4 tracking-wide group-hover:translate-x-2 transition-transform duration-500">
                                             {item.title}
                                         </h3>
-                                        <p className="text-white/50 font-light text-xs leading-loose border-l border-white/20 pl-4">
+                                        <p className="text-white/70 font-normal text-sm leading-loose border-l border-white/20 pl-4">
                                             {item.description}
                                         </p>
                                     </div>
@@ -177,69 +184,68 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Interlude */}
-            <section className="w-full h-[60vh] md:h-[80vh] relative overflow-hidden flex items-center justify-center bg-[#050505] border-y border-white/5">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#CF2E2E]/10 via-transparent to-transparent" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
-                <div className="relative z-10 text-center px-6">
-                    <div className="w-[1px] h-24 bg-white mx-auto mb-8" />
-                    <h2 className="text-6xl md:text-8xl font-[family-name:var(--font-display)] font-light leading-none tracking-tighter text-white opacity-90 uppercase">
-                        NO MIND
-                    </h2>
+            {/* Values Section */}
+            <section className="w-full py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+                <div className="max-w-[1200px] mx-auto">
+                    <FadeIn className="mb-16 text-center">
+                        <span className="text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/40 block mb-4">
+                            03 — What We Stand For
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-display)] font-light text-white">
+                            Our Values
+                        </h2>
+                    </FadeIn>
+
+                    <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {values.map((value, i) => (
+                            <StaggerItem key={value.title}>
+                                <motion.div
+                                    className="group p-8 border border-white/5 hover:border-white/10 transition-all duration-500 bg-[#0a0a0a]/50"
+                                    whileHover={{ y: -4 }}
+                                >
+                                    <div className="flex items-start gap-6">
+                                        <span className="text-xs font-mono text-[#B84C4C]">0{i + 1}</span>
+                                        <div>
+                                            <h3 className="text-lg font-medium text-white mb-2 group-hover:translate-x-2 transition-transform duration-500">
+                                                {value.title}
+                                            </h3>
+                                            <p className="text-sm text-white/60">{value.desc}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </StaggerItem>
+                        ))}
+                    </StaggerContainer>
                 </div>
             </section>
 
-            {/* Founder Section */}
-            <section className="w-full py-32 px-6 md:px-12 relative overflow-hidden">
-                <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-24 items-center">
-                    {/* Image */}
-                    <FadeIn className="w-full md:w-5/12 relative group">
-                        <div className="aspect-[3/4] relative overflow-hidden bg-[#111] border border-white/5 flex items-center justify-center">
-                            <span className="font-[family-name:var(--font-display)] text-8xl text-white/5 font-light tracking-tighter select-none">
-                                AB
-                            </span>
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/20 to-transparent" />
-                        </div>
-                        <div className="absolute -right-4 top-12 bg-[#050505] border border-white/20 py-4 px-2 writing-vertical hidden md:block">
-                            <span className="text-[10px] tracking-widest text-white uppercase">Founder</span>
+            {/* Featured Product Mention */}
+            <section className="w-full py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-[#050505] to-[#0a0a0a] border-t border-white/5">
+                <div className="max-w-[1200px] mx-auto">
+                    <FadeIn>
+                        <div className="border border-white/10 p-8 md:p-12 bg-[#0a0a0a]/50 relative overflow-hidden">
+                            <span className="absolute top-8 right-8 text-6xl font-mono text-white/[0.03]">*</span>
+
+                            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                                <div>
+                                    <span className="text-emerald-400 text-xs font-mono border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 uppercase mb-4 inline-block">Live Product</span>
+                                    <h3 className="text-2xl md:text-3xl font-light text-white mb-4">Barali Chat</h3>
+                                    <p className="text-white/60 text-sm max-w-lg">
+                                        Our flagship AI chat platform. BYOK architecture, character creation,
+                                        story mode, and Council of Thoughts—all built with privacy in mind.
+                                    </p>
+                                </div>
+                                <Link
+                                    href="https://barali.tech"
+                                    target="_blank"
+                                    className="group inline-flex items-center gap-3 border border-white/20 text-white px-8 py-4 text-xs uppercase tracking-widest font-medium hover:border-[#B84C4C] hover:text-[#B84C4C] transition-all duration-300 shrink-0"
+                                >
+                                    Visit barali.tech
+                                    <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
+                                </Link>
+                            </div>
                         </div>
                     </FadeIn>
-
-                    {/* Bio */}
-                    <div className="w-full md:w-7/12 flex flex-col justify-center">
-                        <FadeIn>
-                            <span className="text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/40 block mb-8">
-                                03 — Leadership
-                            </span>
-                        </FadeIn>
-                        <FadeIn delay={0.1}>
-                            <h3 className="text-3xl md:text-4xl font-[family-name:var(--font-display)] font-light text-white mb-8 leading-tight">
-                                Calculating the <br />
-                                <span className="italic text-white/50">immeasurable.</span>
-                            </h3>
-                        </FadeIn>
-                        <FadeIn delay={0.2}>
-                            <div className="space-y-6 text-sm font-light text-white/50 leading-loose max-w-md">
-                                <p>
-                                    Abhishek Barali founded KAIKI on a simple premise: human consciousness is not a resource to be mined, but a garden to be tended.
-                                </p>
-                                <p>
-                                    Merging the precision of computational neuroscience with the philosophy of Zen minimalism, he directs the lab towards a future where technology is felt, not seen.
-                                </p>
-                            </div>
-                        </FadeIn>
-                        <FadeIn delay={0.3} className="pt-12">
-                            <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-4 text-white text-[10px] uppercase tracking-widest group"
-                            >
-                                <div className="h-[1px] w-8 bg-white group-hover:w-12 transition-all duration-300" />
-                                Get in Touch
-                            </Link>
-                        </FadeIn>
-                    </div>
                 </div>
             </section>
 
@@ -249,27 +255,28 @@ export default function AboutPage() {
                 <div className="max-w-4xl mx-auto text-center px-6 z-10 relative">
                     <FadeIn>
                         <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-display)] font-light text-white mb-6">
-                            Begin Calibration
+                            Let&apos;s Build Together
                         </h2>
                     </FadeIn>
                     <FadeIn delay={0.1}>
-                        <p className="text-white/50 font-light text-sm tracking-wide mb-12">
-                            Join the select few defining the future of wellness.
+                        <p className="text-white/70 font-normal text-sm tracking-wide mb-12">
+                            Have a project in mind? We&apos;d love to hear about it.
                         </p>
                     </FadeIn>
                     <FadeIn delay={0.2}>
                         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
                             <Link
                                 href="/contact"
-                                className="bg-white text-[#050505] border border-white px-10 py-4 text-[10px] font-bold tracking-widest uppercase hover:bg-transparent hover:text-white transition-all duration-300 min-w-[200px]"
+                                className="bg-white text-[#050505] border border-white px-10 py-4 text-[10px] font-bold tracking-widest uppercase hover:bg-[#B84C4C] hover:border-[#B84C4C] hover:text-white transition-all duration-300 min-w-[200px] text-center"
                             >
-                                Request Access
+                                Start a Project
                             </Link>
                             <Link
-                                href="/contact"
-                                className="text-white border border-white/20 px-10 py-4 text-[10px] font-bold tracking-widest uppercase hover:border-white transition-all duration-300 min-w-[200px]"
+                                href="/products"
+                                className="text-white border border-white/20 px-10 py-4 text-[10px] font-bold tracking-widest uppercase hover:border-[#B84C4C] hover:text-[#B84C4C] transition-all duration-300 min-w-[200px] flex items-center justify-center gap-3"
                             >
-                                Contact Labs
+                                View Our Work
+                                <ArrowRight size={12} />
                             </Link>
                         </div>
                     </FadeIn>

@@ -18,13 +18,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'KAIKI - AI Intelligence Lab',
-  description: 'Building next-generation AI tools for personal growth and wellness.',
-  keywords: ['AI', 'artificial intelligence', 'wellness', 'technology', 'KAIKI'],
+  title: 'KAIKI - Crafting Intelligent Software',
+  description: 'AI-powered apps, automation, and tools that work for you.',
+  keywords: ['AI', 'software development', 'automation', 'web apps', 'KAIKI'],
   authors: [{ name: 'Abhishek Barali' }],
   openGraph: {
-    title: 'KAIKI - AI Intelligence Lab',
-    description: 'Building next-generation AI tools for personal growth and wellness.',
+    title: 'KAIKI - Crafting Intelligent Software',
+    description: 'AI-powered apps, automation, and tools that work for you.',
     url: 'https://kaiki.dev',
     siteName: 'KAIKI',
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'KAIKI - AI Intelligence Lab',
+        alt: 'KAIKI - Crafting Intelligent Software',
       },
     ],
     locale: 'en_US',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KAIKI - AI Intelligence Lab',
-    description: 'Building next-generation AI tools for personal growth and wellness.',
+    title: 'KAIKI - Crafting Intelligent Software',
+    description: 'AI-powered apps, automation, and tools that work for you.',
     images: ['/images/og-image.jpg'],
   },
   robots: {

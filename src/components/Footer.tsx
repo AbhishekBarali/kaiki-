@@ -21,7 +21,7 @@ export default function Footer() {
                 {/* Logo & Info */}
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-[#CF2E2E] rounded-full" />
+                        <div className="w-2 h-2 bg-[#B84C4C] rounded-full" />
                         <span className="text-xl font-light tracking-[0.2em] text-white font-[family-name:var(--font-display)]">
                             KAIKI
                         </span>

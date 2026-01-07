@@ -50,7 +50,7 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                                         onClick={onClose}
                                         className="group flex items-center gap-4"
                                     >
-                                        <span className="text-xs font-mono text-[#CF2E2E]">
+                                        <span className="text-xs font-mono text-[#B84C4C]">
                                             0{index + 1}
                                         </span>
                                         <span className="text-2xl font-light tracking-wide text-white/80 group-hover:text-white transition-colors">
