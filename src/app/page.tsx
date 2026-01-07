@@ -55,23 +55,23 @@ export default function HomePage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6">
 
-        {/* Animated Geometric Elements */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+        {/* Animated Geometric Elements - Hidden on very small screens for cleaner look */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none hidden sm:flex">
           <motion.div
             animate={{ scale: [1, 1.02, 1], opacity: [0.4, 0.6, 0.4], rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="w-[60vh] h-[60vh] border border-white/10 rounded-full"
+            className="w-[50vw] md:w-[60vh] h-[50vw] md:h-[60vh] border border-white/10 rounded-full"
           />
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            className="absolute w-[40vh] h-[40vh] border border-[#B84C4C]/20 rounded-full"
+            className="absolute w-[35vw] md:w-[40vh] h-[35vw] md:h-[40vh] border border-[#B84C4C]/20 rounded-full"
           />
           {/* Grid lines */}
-          <div className="absolute h-[80vh] w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-          <div className="absolute h-[1px] w-[80vh] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="absolute h-[60vh] md:h-[80vh] w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+          <div className="absolute h-[1px] w-[60vw] md:w-[80vh] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
 
         {/* Vertical Text */}
@@ -89,12 +89,12 @@ export default function HomePage() {
 
 
         {/* Main Content */}
-        <div className="z-10 flex flex-col items-center text-center px-6">
+        <div className="z-10 flex flex-col items-center text-center px-4 sm:px-6 w-full max-w-4xl">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-[family-name:var(--font-display)] text-5xl sm:text-7xl md:text-9xl font-normal tracking-[0.3em] sm:tracking-[0.5em] md:tracking-[0.8em] text-white select-none relative"
+            className="font-[family-name:var(--font-display)] text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-normal tracking-[0.15em] sm:tracking-[0.3em] md:tracking-[0.5em] lg:tracking-[0.8em] text-white select-none relative"
           >
             KAIKI
           </motion.h1>
@@ -103,18 +103,19 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="mt-12 md:mt-16 flex flex-col items-center gap-6"
+            className="mt-8 sm:mt-12 md:mt-16 flex flex-col items-center gap-4 sm:gap-6 w-full"
           >
-            <div className="h-[60px] w-[1px] bg-[#B84C4C]/50" />
+            <div className="h-[40px] sm:h-[60px] w-[1px] bg-[#B84C4C]/50" />
 
             {/* Tagline */}
-            <h2 className="text-lg md:text-2xl font-light text-white tracking-wide">
+            <h2 className="text-base sm:text-lg md:text-2xl font-light text-white tracking-wide">
               Crafting intelligent software.
             </h2>
 
-            <p className="max-w-md text-sm md:text-base font-normal leading-relaxed text-white/70 mt-2">
+            <p className="max-w-sm sm:max-w-md text-sm md:text-base font-normal leading-relaxed text-white/70 mt-1 sm:mt-2 px-2">
               AI-powered apps, automation, and tools
-              <br />
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
               that work for you.
             </p>
 
@@ -123,18 +124,18 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 mt-8"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto px-4 sm:px-0"
             >
               <Link
                 href="/products"
-                className="group flex items-center justify-center gap-3 bg-white text-[#050505] px-8 py-4 text-xs uppercase tracking-widest font-medium hover:bg-[#B84C4C] hover:text-white transition-all duration-300"
+                className="group flex items-center justify-center gap-3 bg-white text-[#050505] px-6 sm:px-8 py-3 sm:py-4 text-xs uppercase tracking-widest font-medium hover:bg-[#B84C4C] hover:text-white transition-all duration-300 w-full sm:w-auto"
               >
                 Explore Our Work
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 text-xs uppercase tracking-widest hover:border-[#B84C4C] hover:text-[#B84C4C] transition-all duration-300"
+                className="flex items-center justify-center gap-3 border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs uppercase tracking-widest hover:border-[#B84C4C] hover:text-[#B84C4C] transition-all duration-300 w-full sm:w-auto"
               >
                 Get in Touch
               </Link>
@@ -143,13 +144,13 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12">
+        <div className="absolute bottom-6 sm:bottom-8 md:bottom-12">
           <ScrollIndicator />
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section className="relative py-32 md:py-48 px-6 border-t border-white/5" id="philosophy">
+      <section className="relative py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 border-t border-white/5" id="philosophy">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Section Label */}
           <div className="md:col-span-2 md:border-r border-white/5 relative hidden md:block">
@@ -163,16 +164,16 @@ export default function HomePage() {
           <div className="md:col-span-1 hidden md:block" />
 
           {/* Content */}
-          <div className="md:col-span-8 flex flex-col gap-32">
+          <div className="md:col-span-8 flex flex-col gap-12 sm:gap-20 md:gap-32">
             <FadeIn className="md:ml-[-2rem]">
-              <h2 className="text-3xl md:text-5xl font-light text-white leading-tight mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-white leading-tight mb-4 sm:mb-6 md:mb-8">
                 The way of the craftsman.
                 <br />
                 <span className="text-white/40">Software as art.</span>
               </h2>
             </FadeIn>
 
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-24" staggerDelay={0.15}>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-12 md:gap-x-24 gap-y-12 sm:gap-y-16 md:gap-y-24" staggerDelay={0.15}>
               {philosophyItems.map((item, index) => (
                 <StaggerItem key={item.title}>
                   <div className={`group ${index === 1 ? 'md:col-start-2' : ''}`}>
@@ -194,22 +195,22 @@ export default function HomePage() {
       </section>
 
       {/* What We Build Section */}
-      <section className="relative py-32 md:py-48 bg-gradient-to-b from-[#0a0a0a] to-[#050505] border-t border-white/5">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <FadeIn className="text-center mb-20">
-            <span className="text-xs font-mono text-[#B84C4C] uppercase tracking-[0.3em] block mb-4">
+      <section className="relative py-16 sm:py-24 md:py-32 lg:py-48 bg-gradient-to-b from-[#0a0a0a] to-[#050505] border-t border-white/5">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+          <FadeIn className="text-center mb-10 sm:mb-16 md:mb-20">
+            <span className="text-xs font-mono text-[#B84C4C] uppercase tracking-[0.2em] sm:tracking-[0.3em] block mb-3 sm:mb-4">
               What We Build
             </span>
-            <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-4 sm:mb-6">
               Intelligent Solutions
             </h2>
-            <p className="text-white/60 font-normal text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/60 font-normal text-sm sm:text-base max-w-md sm:max-w-xl mx-auto leading-relaxed px-2">
               From AI platforms to custom web applications. We craft software that feels alive.
             </p>
           </FadeIn>
 
           {/* Service Icons */}
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-16">
             {[
               { title: 'AI Products', desc: 'Intelligent platforms and tools', icon: Cpu },
               { title: 'Web Apps', desc: 'Modern, responsive applications', icon: Braces },
@@ -217,12 +218,12 @@ export default function HomePage() {
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <motion.div
-                  className="group p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 relative overflow-hidden text-center"
+                  className="group p-6 sm:p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 relative overflow-hidden text-center"
                   whileHover={{ y: -4 }}
                 >
-                  <item.icon className="w-8 h-8 text-[#B84C4C]/60 mx-auto mb-6 group-hover:text-[#B84C4C] transition-colors" />
-                  <h4 className="text-lg font-medium text-white mb-2 tracking-wide">{item.title}</h4>
-                  <p className="text-sm text-white/50">{item.desc}</p>
+                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#B84C4C]/60 mx-auto mb-4 sm:mb-6 group-hover:text-[#B84C4C] transition-colors" />
+                  <h4 className="text-base sm:text-lg font-medium text-white mb-2 tracking-wide">{item.title}</h4>
+                  <p className="text-xs sm:text-sm text-white/50">{item.desc}</p>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -241,8 +242,8 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-32 md:py-48 border-t border-white/5" id="services">
-        <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+      <section className="relative py-16 sm:py-24 md:py-32 lg:py-48 border-t border-white/5" id="services">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 md:gap-12">
           {/* Section Label */}
           <div className="md:col-span-2 md:border-r border-white/5 relative hidden md:block">
             <div className="sticky top-32">
@@ -256,11 +257,11 @@ export default function HomePage() {
 
           {/* Content */}
           <div className="md:col-span-9">
-            <FadeIn className="mb-20">
-              <h2 className="text-4xl md:text-6xl font-extralight text-white tracking-tight mb-4">
+            <FadeIn className="mb-10 sm:mb-16 md:mb-20">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white tracking-tight mb-3 sm:mb-4">
                 How We Can Help
               </h2>
-              <p className="text-white/50 font-mono text-xs uppercase tracking-widest">
+              <p className="text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
                 AI-Powered Development
               </p>
             </FadeIn>
@@ -269,21 +270,21 @@ export default function HomePage() {
             <div className="space-y-0 border-t border-white/10">
               {services.map((service) => (
                 <FadeIn key={service.name}>
-                  <div className="group relative py-12 border-b border-white/10 hover:bg-white/[0.02] transition-colors">
-                    <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 px-4">
-                      <h3 className="text-2xl md:text-3xl font-light tracking-[0.15em] text-white group-hover:text-[#B84C4C] transition-colors duration-500">
+                  <div className="group relative py-6 sm:py-8 md:py-12 border-b border-white/10 hover:bg-white/[0.02] transition-colors">
+                    <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-3 sm:gap-4 px-2 sm:px-4">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-[0.1em] sm:tracking-[0.15em] text-white group-hover:text-[#B84C4C] transition-colors duration-500">
                         {service.name}
                       </h3>
-                      <div className="flex items-center gap-4">
-                        <span className="text-xs text-white/40 font-mono">{service.category}</span>
-                        <span className="w-12 h-[1px] bg-white/10" />
-                        <span className={`text-[10px] font-mono border px-2 py-1 uppercase ${service.statusColor}`}>
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <span className="text-[10px] sm:text-xs text-white/40 font-mono">{service.category}</span>
+                        <span className="w-8 sm:w-12 h-[1px] bg-white/10" />
+                        <span className={`text-[9px] sm:text-[10px] font-mono border px-2 py-1 uppercase ${service.statusColor}`}>
                           {service.status}
                         </span>
                       </div>
                     </div>
                     <div className="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-700 ease-in-out">
-                      <p className="pt-4 px-4 text-sm text-white/60 font-normal max-w-lg">
+                      <p className="pt-3 sm:pt-4 px-2 sm:px-4 text-xs sm:text-sm text-white/60 font-normal max-w-lg">
                         {service.description}
                       </p>
                     </div>
@@ -293,19 +294,20 @@ export default function HomePage() {
             </div>
 
             {/* CTA */}
-            <FadeIn className="mt-24 pt-12 border-t border-white/5">
-              <div className="flex flex-col md:flex-row gap-12 items-start justify-between">
-                <div className="max-w-md">
-                  <h4 className="text-xl text-white font-light mb-4">Start Your Project</h4>
-                  <p className="text-sm text-white/50 leading-relaxed font-normal">
+            <FadeIn className="mt-12 sm:mt-16 md:mt-24 pt-8 sm:pt-10 md:pt-12 border-t border-white/5">
+              <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12 items-start justify-between">
+                <div className="max-w-sm sm:max-w-md">
+                  <h4 className="text-lg sm:text-xl text-white font-light mb-3 sm:mb-4">Start Your Project</h4>
+                  <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-normal">
                     Have an idea? Let's build something intelligent together.
-                    <br />
+                    <br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>
                     We work with startups and enterprises alike.
                   </p>
                 </div>
                 <Link
                   href="/contact"
-                  className="group flex items-center gap-4 border border-white/10 hover:border-[#B84C4C] hover:text-[#B84C4C] px-8 py-4 transition-all duration-300"
+                  className="group flex items-center gap-3 sm:gap-4 border border-white/10 hover:border-[#B84C4C] hover:text-[#B84C4C] px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
                   <span className="text-[10px] uppercase tracking-[0.2em]">
                     Contact Us
