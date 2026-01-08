@@ -50,13 +50,13 @@ export default function ContactPage() {
                     {/* Left Column - Info */}
                     <div>
                         <FadeIn>
-                            <span className="text-[10px] font-mono text-[#B84C4C] uppercase tracking-[0.3em] block mb-8">
+                            <span className="text-xs font-mono text-[#B84C4C] uppercase tracking-[0.3em] block mb-8">
                                 Contact
                             </span>
                             <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-8">
                                 Let&apos;s Connect
                             </h1>
-                            <p className="text-white/50 font-light text-sm md:text-base leading-relaxed max-w-md mb-16">
+                            <p className="text-white/80 font-light text-base md:text-lg leading-relaxed max-w-md mb-16">
                                 Whether you&apos;re interested in our products, want to collaborate on research, or just want to say hello — we&apos;d love to hear from you.
                             </p>
                         </FadeIn>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                                         <Mail size={16} className="text-white/50" />
                                     </div>
                                     <div>
-                                        <h3 className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Email</h3>
+                                        <h3 className="text-xs uppercase tracking-widest text-white/60 mb-2">Email</h3>
                                         <a href="mailto:abhishekbaraliwork@gmail.com" className="text-white hover:text-[#B84C4C] transition-colors">
                                             abhishekbaraliwork@gmail.com
                                         </a>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                                         <MapPin size={16} className="text-white/50" />
                                     </div>
                                     <div>
-                                        <h3 className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Location</h3>
+                                        <h3 className="text-xs uppercase tracking-widest text-white/60 mb-2">Location</h3>
                                         <p className="text-white font-light">
                                             Kathmandu, Nepal
                                         </p>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                                 <h2 className="text-xl font-[family-name:var(--font-display)] font-light text-white mb-2">
                                     Send a Message
                                 </h2>
-                                <p className="text-white/40 text-sm mb-12">
+                                <p className="text-white/60 text-sm mb-12">
                                     We typically respond within 24-48 hours.
                                 </p>
 
@@ -233,7 +233,7 @@ export default function ContactPage() {
                                                 disabled={isSubmitting}
                                                 className="group flex items-center justify-between w-full py-4 border border-white/10 px-6 hover:bg-white hover:text-[#050505] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                                             >
-                                                <span className="text-[10px] uppercase tracking-[0.2em]">
+                                                <span className="text-xs uppercase tracking-[0.2em]">
                                                     {isSubmitting ? 'Sending...' : 'Send Message'}
                                                 </span>
                                                 {isSubmitting ? (
@@ -255,7 +255,7 @@ export default function ContactPage() {
             <section className="py-16 px-6 md:px-12 border-t border-white/5">
                 <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
                     <FadeIn>
-                        <p className="text-white/40 text-sm font-light">
+                        <p className="text-white text-base font-light">
                             Prefer a quicker response?
                         </p>
                     </FadeIn>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                             href="https://twitter.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white text-[10px] uppercase tracking-widest hover:text-[#B84C4C] transition-colors"
+                            className="text-white text-xs uppercase tracking-widest hover:text-[#B84C4C] transition-colors"
                         >
                             DM us on Twitter / X →
                         </a>

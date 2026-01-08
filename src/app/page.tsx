@@ -87,7 +87,7 @@ function ServiceAccordion({ services }: { services: Service[] }) {
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
                 <div className="flex items-center gap-4">
-                  <h3 className={`text-xl sm:text-2xl md:text-3xl font-light tracking-[0.1em] sm:tracking-[0.15em] transition-colors duration-500 ${expandedIndex === index ? 'text-[#B84C4C]' : 'text-white'}`}>
+                  <h3 className={`text-lg sm:text-xl md:text-2xl font-light tracking-[0.1em] sm:tracking-[0.15em] transition-colors duration-500 ${expandedIndex === index ? 'text-[#B84C4C]' : 'text-white'}`}>
                     {service.name}
                   </h3>
                   {/* Minimal plus/minus indicator */}
@@ -97,9 +97,9 @@ function ServiceAccordion({ services }: { services: Service[] }) {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
-                  <span className="text-xs sm:text-sm text-white/40 font-mono">{service.category}</span>
-                  <span className="w-8 sm:w-12 h-[1px] bg-white/10" />
-                  <span className={`text-[10px] sm:text-xs font-mono border px-2 py-1 uppercase ${service.statusColor}`}>
+                  <span className="text-xs sm:text-sm text-white/60 font-mono">{service.category}</span>
+                  <span className="w-8 sm:w-12 h-[1px] bg-white/20" />
+                  <span className={`text-xs font-mono border px-2 py-1 uppercase ${service.statusColor}`}>
                     {service.status}
                   </span>
                 </div>
@@ -116,7 +116,7 @@ function ServiceAccordion({ services }: { services: Service[] }) {
                   transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="px-2 sm:px-4 pb-6 sm:pb-8 text-sm sm:text-base text-white/60 font-normal max-w-lg">
+                  <p className="px-2 sm:px-4 pb-6 sm:pb-8 text-sm sm:text-base text-white/80 font-normal max-w-lg">
                     {service.description}
                   </p>
                 </motion.div>
@@ -125,6 +125,71 @@ function ServiceAccordion({ services }: { services: Service[] }) {
           </div>
         </FadeIn>
       ))}
+    </div>
+  );
+}
+
+// Philosophy card with mobile accordion
+type PhilosophyItem = {
+  number: string;
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
+
+function PhilosophyCard({ item }: { item: PhilosophyItem }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="md:p-0 md:bg-transparent md:border-0">
+      {/* Mobile: Clean minimal row */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full text-left md:hidden py-4 border-b border-white/10"
+      >
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-mono text-[#B84C4C]">{item.number}</span>
+            <h3 className={`text-sm sm:text-base font-normal tracking-wide transition-colors duration-300 ${isExpanded ? 'text-[#B84C4C]' : 'text-white'}`}>
+              {item.title}
+            </h3>
+          </div>
+          <div className="relative w-4 h-4 flex items-center justify-center shrink-0">
+            <span className={`absolute w-3 h-[1.5px] bg-white/40 transition-all duration-300 ${isExpanded ? 'bg-[#B84C4C]' : ''}`} />
+            <span className={`absolute w-[1.5px] h-3 bg-white/40 transition-all duration-300 ${isExpanded ? 'opacity-0 rotate-90' : 'opacity-100'}`} />
+          </div>
+        </div>
+      </button>
+
+      {/* Desktop header - not clickable */}
+      <div className="hidden md:block">
+        <div className="flex justify-between items-baseline mb-4 relative">
+          <span className="text-sm font-mono text-[#B84C4C]">{item.number}</span>
+        </div>
+        <h3 className="text-2xl font-normal text-white mb-4 tracking-wide">
+          {item.title}
+        </h3>
+        <p className="text-base leading-7 text-white/80 font-normal border-l border-[#B84C4C]/50 pl-6 py-2">
+          {item.description}
+        </p>
+      </div>
+
+      {/* Mobile accordion */}
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+            className="overflow-hidden md:hidden"
+          >
+            <p className="text-sm leading-relaxed text-white/80 font-normal pt-2 pb-4">
+              {item.description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -155,9 +220,9 @@ export default function HomePage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="writing-vertical text-[10px] tracking-[0.3em] uppercase text-white/30 font-mono"
+            className="writing-vertical text-xs tracking-[0.3em] uppercase text-white/50 font-mono"
           >
-            Software Studio // 2026
+            Software Studio // 2025
           </motion.div>
         </div>
 
@@ -165,11 +230,12 @@ export default function HomePage() {
 
         {/* Main Content */}
         <div className="z-10 flex flex-col items-center text-center px-4 sm:px-6 w-full max-w-4xl">
+          {/* KAIKI Logo - compensate for letter-spacing visual offset */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-[family-name:var(--font-display)] text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-normal tracking-[0.15em] sm:tracking-[0.3em] md:tracking-[0.5em] lg:tracking-[0.8em] text-white select-none relative"
+            className="font-[family-name:var(--font-display)] text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-normal tracking-[0.15em] sm:tracking-[0.3em] md:tracking-[0.5em] lg:tracking-[0.8em] text-white select-none relative pl-[0.15em] sm:pl-[0.3em] md:pl-[0.5em] lg:pl-[0.8em]"
           >
             KAIKI
           </motion.h1>
@@ -181,15 +247,15 @@ export default function HomePage() {
             className="mt-8 sm:mt-12 md:mt-16 flex flex-col items-center gap-4 sm:gap-6 w-full"
           >
             {/* Tagline */}
-            <h2 className="text-base sm:text-lg md:text-2xl font-light text-white tracking-wide">
+            <h2 className="text-base sm:text-lg md:text-2xl font-light text-white tracking-wide text-center">
               Intelligent Automation for Growing Businesses
             </h2>
 
-            <p className="max-w-sm sm:max-w-md text-sm md:text-base font-normal leading-relaxed text-white/70 mt-1 sm:mt-2 px-2">
-              Save time. Cut costs.
+            <p className="max-w-md sm:max-w-lg text-base md:text-lg font-normal leading-relaxed text-white/90 mt-2 sm:mt-3 px-2 text-center">
+              AI tools that actually work for your business.
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              AI tools that actually work for your business.
+              Save time. Cut costs.
             </p>
 
             {/* CTA Buttons */}
@@ -197,7 +263,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto px-4 sm:px-0"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto px-4 sm:px-0"
             >
               <Link
                 href="/products"
@@ -239,27 +305,17 @@ export default function HomePage() {
           {/* Content */}
           <div className="md:col-span-8 flex flex-col gap-12 sm:gap-20 md:gap-32">
             <FadeIn className="md:ml-[-2rem]">
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-white leading-tight mb-4 sm:mb-6 md:mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight mb-4 sm:mb-6 md:mb-8">
                 Work smarter, not harder.
                 <br />
-                <span className="text-white/40">Automation that delivers.</span>
+                <span className="text-white/60">Automation that delivers.</span>
               </h2>
             </FadeIn>
 
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-x-24 md:gap-y-20" staggerDelay={0.15}>
               {philosophyItems.map((item) => (
                 <StaggerItem key={item.title}>
-                  <div className="p-6 sm:p-8 md:p-0 bg-white/[0.02] md:bg-transparent border border-white/10 md:border-0">
-                    <div className="flex justify-between items-baseline mb-3 sm:mb-4 relative">
-                      <span className="text-sm font-mono text-[#B84C4C]">{item.number}</span>
-                    </div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-3 sm:mb-4 tracking-wide">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm sm:text-base leading-relaxed sm:leading-7 text-white/60 font-normal border-l-2 md:border-l border-[#B84C4C]/50 pl-4 sm:pl-6 py-1 sm:py-2">
-                      {item.description}
-                    </p>
-                  </div>
+                  <PhilosophyCard item={item} />
                 </StaggerItem>
               ))}
             </StaggerContainer>
@@ -271,13 +327,13 @@ export default function HomePage() {
       <section className="relative py-16 sm:py-24 md:py-32 lg:py-48 bg-gradient-to-b from-[#0a0a0a] to-[#050505] border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <FadeIn className="text-center mb-10 sm:mb-16 md:mb-20">
-            <span className="text-xs font-mono text-[#B84C4C] uppercase tracking-[0.2em] sm:tracking-[0.3em] block mb-3 sm:mb-4">
+            <span className="text-sm font-mono text-[#B84C4C] uppercase tracking-[0.2em] sm:tracking-[0.3em] block mb-3 sm:mb-4">
               What We Build
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-4 sm:mb-6">
               Intelligent Solutions
             </h2>
-            <p className="text-white/60 font-normal text-sm sm:text-base max-w-md sm:max-w-xl mx-auto leading-relaxed px-2">
+            <p className="text-white/80 font-normal text-base sm:text-lg max-w-md sm:max-w-xl mx-auto leading-relaxed px-2">
               Custom-built AI tools and automation that help ambitious businesses scale efficiently.
             </p>
           </FadeIn>
@@ -294,9 +350,9 @@ export default function HomePage() {
                   className="group p-6 sm:p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 relative overflow-hidden text-center"
                   whileHover={{ y: -4 }}
                 >
-                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#B84C4C]/60 mx-auto mb-4 sm:mb-6 group-hover:text-[#B84C4C] transition-colors" />
+                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#B84C4C]/80 mx-auto mb-4 sm:mb-6 group-hover:text-[#B84C4C] transition-colors" />
                   <h4 className="text-base sm:text-lg font-medium text-white mb-2 tracking-wide">{item.title}</h4>
-                  <p className="text-xs sm:text-sm text-white/50">{item.desc}</p>
+                  <p className="text-sm text-white/70">{item.desc}</p>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -334,7 +390,7 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white tracking-tight mb-3 sm:mb-4">
                 How We Can Help
               </h2>
-              <p className="text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
+              <p className="text-white/70 font-mono text-xs uppercase tracking-widest">
                 AI-Powered Development
               </p>
             </FadeIn>
@@ -347,7 +403,7 @@ export default function HomePage() {
               <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12 items-start justify-between">
                 <div className="max-w-sm sm:max-w-md">
                   <h4 className="text-lg sm:text-xl text-white font-light mb-3 sm:mb-4">Start Your Project</h4>
-                  <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-normal">
+                  <p className="text-sm text-white/70 leading-relaxed font-normal">
                     Ready to get more done with less effort?
                     <br className="hidden sm:block" />
                     <span className="sm:hidden"> </span>

@@ -84,7 +84,7 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                             transition={{ delay: 0.6, duration: 0.5 }}
                             className="absolute bottom-12 left-12"
                         >
-                            <p className="text-[10px] text-white/30 font-mono uppercase tracking-widest">
+                            <p className="text-xs text-white/60 font-mono uppercase tracking-widest">
                                 KAIKI Labs
                                 <br />
                                 Est. 2024

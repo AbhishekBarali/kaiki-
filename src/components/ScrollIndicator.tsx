@@ -10,7 +10,7 @@ export default function ScrollIndicator() {
             transition={{ delay: 1.5, duration: 1 }}
             className="flex flex-col items-center gap-4"
         >
-            <span className="text-[9px] uppercase tracking-[0.3em] text-white/40">
+            <span className="text-xs uppercase tracking-[0.3em] text-white/60">
                 Scroll
             </span>
             <motion.div

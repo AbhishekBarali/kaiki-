@@ -26,7 +26,7 @@ export default function Footer() {
                             KAIKI
                         </span>
                     </div>
-                    <p className="text-[10px] text-white/40 font-mono uppercase tracking-widest max-w-xs leading-relaxed">
+                    <p className="text-xs text-white/70 font-mono uppercase tracking-widest max-w-xs leading-relaxed">
                         AI Intelligence Lab
                         <br />
                         Est. 2025
@@ -42,7 +42,7 @@ export default function Footer() {
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[10px] text-white/50 hover:text-white uppercase tracking-widest transition-colors hover-underline relative w-fit"
+                                className="text-xs text-white/70 hover:text-white uppercase tracking-widest transition-colors hover-underline relative w-fit"
                             >
                                 {link.label}
                             </a>
@@ -53,7 +53,7 @@ export default function Footer() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-[10px] text-white/50 hover:text-white uppercase tracking-widest transition-colors hover-underline relative w-fit"
+                                className="text-xs text-white/70 hover:text-white uppercase tracking-widest transition-colors hover-underline relative w-fit"
                             >
                                 {link.label}
                             </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="text-[9px] text-white/30 font-mono uppercase tracking-widest md:self-end">
+                <div className="text-xs text-white/60 font-mono uppercase tracking-widest md:self-end">
                     © 2025 KAIKI Labs Inc.
                 </div>
             </div>

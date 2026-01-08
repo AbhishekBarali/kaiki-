@@ -90,13 +90,13 @@ export default function ProductsPage() {
             <section className="relative min-h-[60vh] flex flex-col justify-center items-center px-6 md:px-12 overflow-hidden">
 
                 <FadeIn className="relative z-10 text-center max-w-4xl">
-                    <span className="text-[10px] font-mono text-[#B84C4C] uppercase tracking-[0.3em] block mb-8">
+                    <span className="text-xs font-mono text-[#B84C4C] uppercase tracking-[0.3em] block mb-8">
                         Products & Services
                     </span>
                     <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl lg:text-7xl font-light text-white tracking-tight mb-8">
                         What We Build
                     </h1>
-                    <p className="text-white/70 font-normal text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                    <p className="text-white/80 font-normal text-base md:text-lg max-w-xl mx-auto leading-relaxed">
                         From AI-powered platforms to custom software solutions, we craft intelligent tools that solve real problems.
                     </p>
                 </FadeIn>
@@ -108,12 +108,12 @@ export default function ProductsPage() {
                     <FadeIn className="mb-16">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                             <div>
-                                <span className="text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/40 block mb-4">
+                                <span className="text-xs font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/60 block mb-4">
                                     01 — Featured Product
                                 </span>
                                 <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-display)] font-light text-white flex items-center gap-4">
                                     BARALI CHAT
-                                    <span className="text-emerald-400 text-sm font-mono border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 uppercase">Live</span>
+                                    <span className="text-emerald-400 text-xs font-mono border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 uppercase">Live</span>
                                 </h2>
                             </div>
                             <Link
@@ -129,16 +129,16 @@ export default function ProductsPage() {
 
                     <FadeIn className="mb-16">
                         <div className="border border-white/10 bg-[#0a0a0a] p-8 md:p-12">
-                            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-3xl mb-8">
+                            <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-3xl mb-8">
                                 Your AI, your rules. Barali Chat is a BYOK (Bring Your Own Key) AI chat platform that puts you in complete control.
                                 Create characters, share with the community, and experience AI like never before.
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <span className="text-xs font-mono text-white/40 border border-white/10 px-4 py-2">BYOK Architecture</span>
-                                <span className="text-xs font-mono text-white/40 border border-white/10 px-4 py-2">Privacy First</span>
-                                <span className="text-xs font-mono text-white/40 border border-white/10 px-4 py-2">Multi-Model Support</span>
-                                <span className="text-xs font-mono text-white/40 border border-white/10 px-4 py-2">Community Driven</span>
+                                <span className="text-xs font-mono text-white/60 border border-white/20 px-4 py-2">BYOK Architecture</span>
+                                <span className="text-xs font-mono text-white/60 border border-white/20 px-4 py-2">Privacy First</span>
+                                <span className="text-xs font-mono text-white/60 border border-white/20 px-4 py-2">Multi-Model Support</span>
+                                <span className="text-xs font-mono text-white/60 border border-white/20 px-4 py-2">Community Driven</span>
                             </div>
                         </div>
                     </FadeIn>
@@ -164,14 +164,14 @@ export default function ProductsPage() {
                                                     animate={{ opacity: 1, height: 'auto' }}
                                                     exit={{ opacity: 0, height: 0 }}
                                                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                                                    className="text-sm text-white/60 leading-relaxed overflow-hidden"
+                                                    className="text-sm text-white/80 leading-relaxed overflow-hidden"
                                                 >
                                                     {feature.description}
                                                 </motion.p>
                                             )}
                                         </AnimatePresence>
                                         {expandedFeature !== index && (
-                                            <p className="text-xs text-white/30 mt-2">Click to learn more</p>
+                                            <p className="text-xs text-white/50 mt-2">Click to learn more</p>
                                         )}
                                     </div>
                                 </motion.div>
@@ -187,14 +187,14 @@ export default function ProductsPage() {
                     <FadeIn className="mb-16">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                             <div>
-                                <span className="text-[10px] font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/40 block mb-4">
+                                <span className="text-xs font-[family-name:var(--font-display)] tracking-[0.2em] uppercase text-white/60 block mb-4">
                                     02 — Services
                                 </span>
                                 <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-display)] font-light text-white">
                                     Development Services
                                 </h2>
                             </div>
-                            <p className="text-white/50 font-mono text-xs uppercase tracking-widest">
+                            <p className="text-white/70 font-mono text-sm uppercase tracking-widest">
                                 Custom Solutions
                             </p>
                         </div>
@@ -211,16 +211,16 @@ export default function ProductsPage() {
                                     {/* Header */}
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                                         <div className="flex items-center gap-4">
-                                            <span className="text-[10px] font-mono text-white/30">0{index + 1}</span>
+                                            <span className="text-xs font-mono text-white/50">0{index + 1}</span>
                                             <service.icon size={20} className="text-[#B84C4C]" />
                                             <h3 className="text-xl md:text-2xl font-light tracking-[0.05em] text-white">
                                                 {service.name}
                                             </h3>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <span className="text-[10px] text-white/40 font-mono">{service.category}</span>
-                                            <span className="w-8 h-[1px] bg-white/10" />
-                                            <span className={`text-[9px] font-mono border px-2 py-1 uppercase ${service.statusColor}`}>
+                                            <span className="text-xs text-white/60 font-mono">{service.category}</span>
+                                            <span className="w-8 h-[1px] bg-white/20" />
+                                            <span className={`text-[10px] font-mono border px-2 py-1 uppercase ${service.statusColor}`}>
                                                 {service.status}
                                             </span>
                                         </div>
@@ -229,25 +229,25 @@ export default function ProductsPage() {
                                     {/* Body */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
-                                            <p className="text-white/60 font-normal text-xs leading-relaxed mb-6">
+                                            <p className="text-white/80 font-normal text-sm leading-relaxed mb-6">
                                                 {service.description}
                                             </p>
                                             <Link
                                                 href="/contact"
-                                                className="inline-flex items-center gap-2 text-[9px] uppercase tracking-widest text-white border border-white/20 px-5 py-2.5 hover:border-[#B84C4C] hover:text-[#B84C4C] transition-all duration-500"
+                                                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white border border-white/30 px-5 py-2.5 hover:border-[#B84C4C] hover:text-[#B84C4C] transition-all duration-500"
                                             >
                                                 Get Started
-                                                <ArrowRight size={10} />
+                                                <ArrowRight size={12} />
                                             </Link>
                                         </div>
                                         <div>
-                                            <h4 className="text-[9px] uppercase tracking-widest text-white/40 mb-4">
+                                            <h4 className="text-xs uppercase tracking-widest text-white/60 mb-4">
                                                 What&apos;s Included
                                             </h4>
-                                            <ul className="space-y-2">
+                                            <ul className="space-y-3">
                                                 {service.features.map((feature, i) => (
-                                                    <li key={i} className="flex items-center gap-2 text-xs text-white/60 font-normal">
-                                                        <div className="w-1 h-1 bg-[#B84C4C] rounded-full" />
+                                                    <li key={i} className="flex items-center gap-3 text-sm text-white/80 font-normal">
+                                                        <div className="w-1.5 h-1.5 bg-[#B84C4C] rounded-full" />
                                                         {feature}
                                                     </li>
                                                 ))}
