@@ -246,17 +246,17 @@ export default function HomePage() {
               </h2>
             </FadeIn>
 
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-12 md:gap-x-24 gap-y-12 sm:gap-y-16 md:gap-y-20" staggerDelay={0.15}>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-x-24 md:gap-y-20" staggerDelay={0.15}>
               {philosophyItems.map((item) => (
                 <StaggerItem key={item.title}>
-                  <div>
-                    <div className="flex justify-between items-baseline mb-4 relative">
+                  <div className="p-6 sm:p-8 md:p-0 bg-white/[0.02] md:bg-transparent border border-white/10 md:border-0">
+                    <div className="flex justify-between items-baseline mb-3 sm:mb-4 relative">
                       <span className="text-sm font-mono text-[#B84C4C]">{item.number}</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-normal text-white mb-4 tracking-wide">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-3 sm:mb-4 tracking-wide">
                       {item.title}
                     </h3>
-                    <p className="text-base leading-7 text-white/60 font-normal border-l border-[#B84C4C]/50 pl-6 py-2">
+                    <p className="text-sm sm:text-base leading-relaxed sm:leading-7 text-white/60 font-normal border-l-2 md:border-l border-[#B84C4C]/50 pl-4 sm:pl-6 py-1 sm:py-2">
                       {item.description}
                     </p>
                   </div>
